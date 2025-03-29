@@ -1,0 +1,208 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+.takeplacebox{
+
+    width: 100%;
+    height: 80vh;
+    /* background-image: url('https://cdn.wallpapersafari.com/19/88/VwqpzMQ.webp'); */
+    /* background-image: url('https://static.vecteezy.com/system/resources/previews/011/092/319/non_2x/happy-durga-puja-illustrations-durga-face-happy-navratri-bengali-typography-free-vector.jpg'); */
+    /* background-image: url('https://images.pexels.com/photos/28938866/pexels-photo-28938866/free-photo-of-intricate-durga-puja-idol-in-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    /* background-image: url('https://images.pexels.com/photos/28989676/pexels-photo-28989676/free-photo-of-intricate-durga-puja-idol-display-in-kolkata.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    /* border: 2px solid black; */
+
+}
+
+.takeplacebox > .subbox{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid black; */
+
+}
+
+.takeplacetext{
+
+    overflow: hidden;
+    margin-top: 50px;
+
+}
+
+.subbox .takeplacetext > h2{
+
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    margin-bottom: 0;
+
+}
+
+.subbox > .detailssection{
+
+    width: 100%;
+    height: 80%;
+    /* border: 2px solid red; */
+
+}
+
+.detailssection > .imgbox{
+
+    /* border: 2px solid cornflowerblue; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    overflow: hidden;
+
+}
+
+.imgbox > .image{
+
+    /* border: 2px solid blue; */
+    width: 500px;
+    height: 80%;
+    position: relative;
+    /* overflow: hidden; */
+
+}
+
+.image > .imgsection{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+
+.imgsection > img{
+
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.image > .textsection1{
+
+    position: absolute;
+    z-index: 999999;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2b9348;
+    width: 300px;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    /* display: none; */
+    
+}
+ 
+.textsection1 > h2{
+
+    color: #ffff3f;
+    font-family: 'vaidikfont';
+    margin-bottom: 0;
+
+}
+
+.image>.hovertext {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1000px;
+    padding-left: 20px;
+    font-family: 'vaidikfont';
+    /* display: none; */
+
+}
+
+.hovertext > h2{
+
+    color: #ffff3f;
+    font-size: 40px;
+
+}
+
+.hovertext > p{
+
+    color: snow;
+    font-size: 20px;
+
+}
+
+.image>.textsection2 {
+
+    position: absolute;
+    z-index: 999999;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff3f;
+    width: 300px;
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    overflow: hidden;
+
+}
+
+.textsection2 >h2 {
+
+    color: #2b9348;
+    font-family: 'vaidikfont';
+    margin-bottom: 0;
+
+}
+
+.image>.textsection3 {
+
+    position: absolute;
+    z-index: 999999;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2b9348;
+    width: 300px;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
+.textsection3 > h2 {
+
+    color: #ffff3f;
+    font-family: 'vaidikfont';
+    margin-bottom: 0;
+
+}
+

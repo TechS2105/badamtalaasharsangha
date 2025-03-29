@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/pujaschedule.css">
+</head>
+<body>
+    
+    <div class="pujaschedule">
+
+        <div class="text">
+
+            <h2 id="pujaheading"> || Puja Schedule || </h2>
+
+        </div>
+        <div class="schedulescroller">
+
+            <ul>
+
+                <li>
+                    <img src="/images/mahalaya1.png" alt="">
+                    <i> 27 Septembar 2025 </i>
+                </li>
+                <li>
+                    <img src="/images/panchami2.png" alt="">
+                    <i> 28 Septembar 2025 </i>
+                </li>
+                <li>
+                    <img src="/images/sasthi2.png" alt="">
+                    <i> 29 Septembar 2025 </i>
+                  
+                </li>
+                <li>
+                    <img src="/images/saptami2.png" alt="">
+                    <i> 30 Septembar 2025 </i>
+                </li>
+                <li>
+                    <img src="/images/ashtami2.png" alt="">
+                    <i> 1 Octobar 2025 </i>
+                </li>
+                <li>
+                   <img src="/images/nabami2.png" alt="">
+                   <i> 2 Octobar 2025 </i>
+                </li>
+                <li>
+                    <img src="/images/bijaya1.png" alt="">
+                    <i> 3 Octobar 2025 </i>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let text = document.getElementById("pujaheading");
+        let scheduleScroller = document.querySelector(".schedulescroller");
+        let scrollerItems = document.querySelectorAll(".schedulescroller ul li");
+
+        scrollerItems.forEach((items) => {
+
+            items.style.display = "none";
+
+        });
+
+        text.style.transform = 'translateY(500px)';
+        scheduleScroller.style.transform = 'scaleY(0)';
+
+        function headingAnimation (){
+
+            window.addEventListener("scroll", () => {
+
+                if(window.scrollY > 1000){
+
+                    text.style.transform = 'translateY(0px)';
+                    text.style.transition = 'all 0.7s ease'
+                    scheduleScroller.style.transform = 'scaleY(1)';
+                    scheduleScroller.style.transition = 'all 0.7s ease';
+                    scrollerItems.forEach((items) => {
+
+                        items.style.display = "block";
+
+                    });
+
+                }else{
+
+                    text.style.transform = 'translateY(500px)';
+                    text.style.transition = 'all 1s ease';
+                    scheduleScroller.style.transform = 'scaleY(0)';
+                    scheduleScroller.style.transition = 'all 0.7s ease';
+                    scrollerItems.forEach((items) => {
+
+                        items.style.display = "none";
+
+                    });
+
+                }
+
+            });
+
+        }
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                headingAnimation();
+
+            })
+
+        });
+
+    </script>
+
+</body>
+</html>

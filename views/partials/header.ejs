@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <title>Badamtala Ashar Sangha</title>
+</head>
+<body>
+    
+    <header>
+
+        <div class="logo"> 
+
+            <div class="image">
+
+                <img src="/images/logo.png" alt="">
+
+            </div>
+
+            <div class="social">
+
+                <div class="links">
+
+                    <div class="linkbox"><a href="#">Facebook</a></div>
+                    <div class="linkbox"><a href="#">Instagram</i></a></div>
+                    <div class="linkbox"><a href="#">Twitter</a></div>
+                    <div class="linkbox"><a href="#">Whatsapp</a></div>
+
+                </div>
+
+                <div class="contact">
+
+                    <div class="contacttext">
+
+                        <p><i class="ri-phone-line"></i>  +91 232XX XX321 / 223XX XX321 </p>
+                        <p> || </p>
+                        <p><i class="ri-at-line"></i>  badamtalasharsangha@gmail.com </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="nav">
+
+            <nav>
+
+                <ul>
+                    <li><a href="/"> HOME </a></li>
+                    <li id="aboutid">
+                        
+                        <a href="/about"> ABOUT </a> 
+
+                        <div class="submenu">
+
+                            <ul>
+
+                                <li><a href="#">About Menu 1</a></li>
+                                <li><a href="#">About Menu 2</a></li>
+                                <li><a href="#">About Menu 3</a></li>
+                                <li><a href="#">About Menu 4</a></li>
+
+                            </ul>
+
+                        </div>
+                    
+                    </li>
+                    <li id="membersid">
+                        
+                        <a href="#"> CLUB MEMBERS </a>
+                        <div class="submenu2">
+
+                            <ul>
+
+                                <li><a href="#">Members Menu 1</a></li>
+                                <li><a href="#">Members Menu 2</a></li>
+                                <li><a href="#">Members Menu 3</a></li>
+                                <li><a href="#">Members Menu 4</a></li>
+
+                            </ul>
+
+                        </div>
+                    
+                    </li>
+                    <li><a href="#"> ADMINISTRATION </a></li>
+                    <li><a href="#"> PUJA GALLERY </a></li>
+                    <li><a href="#"> PUJA EVENTS </a></li>
+                    <li><a href="#"> PUJA BLOGS </a></li>
+                    <li><a href="#"> CONTACT </a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        let aboutSubMenu = document.getElementById("aboutid");
+        let memberSubMenu = document.getElementById("membersid");
+
+        $(aboutSubMenu).on({
+
+            "mouseover": function (){
+
+                $(".submenu").css({
+
+                    display: "flex",
+
+                });
+                
+                $(".submenu").slideDown();
+
+            },
+
+            "mouseout": function (){
+
+                $(".submenu").css({
+
+                    display: "none",
+                    transition: "all 1s ease"
+
+                });
+
+                $(".submenu").slideUp();
+
+            }
+
+        });
+
+        $(memberSubMenu).on({
+
+            "mouseover": function (){
+
+                $('.submenu2').css({
+
+                    display: "flex"
+
+                });
+
+            },
+
+            "mouseout": function (){
+
+                $('.submenu2').css({
+
+                    display: "none"
+
+                })
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

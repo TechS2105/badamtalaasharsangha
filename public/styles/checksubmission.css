@@ -1,0 +1,95 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+body{
+
+    background-color: #ebebeb;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.submissionbox{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.submissionbox > .imgbox img{
+
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    filter: drop-shadow(2px 5px 5px rgb(0, 0, 0));
+
+}
+
+.submissionbox .textbox h1{
+
+    font-family: 'vaidikfont';
+    font-size: 70px;
+    margin-bottom: 20px;
+    color: crimson;
+
+}
+
+.textbox > p{
+
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.textbox > a{
+
+    font-size: 20px;
+    font-family: 'vaidikfont';
+    text-decoration: none;
+    color: black;
+    position: relative;
+    color: crimson;
+    text-transform: capitalize;
+
+}
+
+.textbox > a::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: crimson;
+    content: "";
+    transition: all 0.7s ease;
+
+}
+
+.textbox > a:hover::before{
+
+    width: 100%;
+
+}
+

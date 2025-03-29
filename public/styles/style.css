@@ -1,0 +1,129 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url(../fonts/Jaini-Regular.ttf);
+}
+
+:root{
+
+    --primarycolor: #ffff3f;
+    --secondarycolor: #2b9348;
+
+}
+
+::selection{
+
+    background-color: var(--secondarycolor);
+    color: var(--primarycolor);
+
+}
+
+body{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.aboutsection{
+
+    width: 100%;
+    height: 500px;
+    /* background-image: url('https://static.vecteezy.com/system/resources/previews/030/741/888/non_2x/navratri-and-durga-puja-celebration-card-background-and-banner-vector.jpg'); */
+    /* background-image: url('https://cdn.wallpapersafari.com/19/88/VwqpzMQ.webp'); */
+    /* background-image: url('https://images.pexels.com/photos/28938866/pexels-photo-28938866/free-photo-of-intricate-durga-puja-idol-in-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    background-image: url('https://images.pexels.com/photos/2969469/pexels-photo-2969469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;                
+    overflow: hidden;
+
+}
+
+.aboutsection > .coloroverlay{
+
+    background-color: #00000063;
+    /* background-image: linear-gradient(90deg, #2b93484d 50%, #ffff3f5d 51%); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.coloroverlay > h2{
+
+    text-align: center;
+    background-color: var(--secondarycolor);
+    width: 400px;
+    color: var(--primarycolor);
+    border-radius: 10px;
+    font-family: 'vaidikfont';
+    font-size: 40px;
+
+}
+
+.coloroverlay > P{
+
+    margin-top: 30px;
+    text-align: center;
+    width: 900px;
+    color: #ffff3f;
+    font-family: 'vaidikfont';
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+
+}
+
+.coloroverlay a > button{
+
+    width: 200px;
+    height: 40px;
+    color: var(--primarycolor);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid var(--primarycolor);
+    border-right: 1px solid var(--primarycolor);
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 25px;
+
+}
+
+.coloroverlay a > button:hover {
+
+    color: var(--primarycolor);
+    border: none;
+
+}
+
+.coloroverlay a > button::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primarycolor);
+    content: "";
+    height: 1px;
+    width: 0%;
+    transition: all 0.5s ease;
+
+}
+
+.coloroverlay a > button:hover::before{
+
+    width: 100%;
+
+}

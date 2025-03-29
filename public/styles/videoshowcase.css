@@ -1,0 +1,166 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+.videoshowcasebox{
+
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/28938866/pexels-photo-28938866/free-photo-of-intricate-durga-puja-idol-in-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    /* overflow: hidden; */
+
+}
+
+.videoshowcasebox > .subvideobox{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.subvideobox > .videocoloroverlay{
+
+    background-color: #00000063;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.videocoloroverlay > .videoHeading{
+
+    text-align: center;
+    height: 100%;
+    /* background-color: var(--secondary-color); */
+    background-image: linear-gradient(180deg, var(--primary-color) 50%, var(--secondary-color) 50%);
+    color: var(--primary-color);
+    width: 600px;
+    /* border-radius: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 2px solid var(--primary-color) ; */
+    overflow: hidden;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.videoHeading > h2{
+
+    font-family: 'vaidikfont';
+    font-size: 60px;
+    line-height: 70px;
+    color: snow;
+
+}
+
+.videoHeading > img{
+
+    background-color: #ffff3f;
+    border-radius: 50%;
+    padding: 20px;
+    border: 5px solid snow;
+    box-shadow: 2px 2px 20px black inset;
+
+}
+
+.videocoloroverlay > .videosection{
+
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+
+}
+
+.videosection > .videos{
+
+    width: 100%;    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    filter: drop-shadow(2px 5px 10px #ffff3f);
+
+}
+
+.videos > .videobox{
+
+    width: 300px;
+    height: 450px;
+    /* background-color: #2b9348; */
+    background-image: url('https://img.freepik.com/premium-vector/happy-durga-puja-illustrations-durga-face-subh-navratri_562076-1455.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.videobox > .icon{
+
+    width: 100%;
+    height: 100px;
+    border: 5px solid #2b9348;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 50%; */
+    background-color: #2b9348;
+    overflow: hidden;
+
+}
+
+.icon > strong{
+
+    color: #ffff3f;
+    font-size: 25px;
+    font-family: 'vaidikfont';
+
+}
+
+.videoHeading > a{
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.videoHeading > a button{
+
+    width: 250px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 25px;
+    color: #2b9348;
+    border-radius: 10px;
+    background-color: #ffff3f;
+}

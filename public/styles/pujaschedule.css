@@ -1,0 +1,133 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: "vaidikfont";
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+:root{
+
+    --primarycolor: #ffff3f;
+    --secondarycolor: #2b9348;
+
+}
+
+.pujaschedule{
+
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ebebeb;
+    /* box-shadow: 2px 2px 10px black; */
+    
+
+}
+
+.pujaschedule > .text{
+
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.text > h2{
+
+    margin-bottom: 20px;
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    color: var(--secondarycolor)
+
+}
+
+.pujaschedule > .schedulescroller{
+
+    width: 90%;
+    background-image: linear-gradient(50deg, var(--primarycolor), var(--secondarycolor));
+    height: 70%;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 2px 5px 20px black inset;
+
+}
+
+.schedulescroller > ul {
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 1800px;
+    list-style-type: none;
+    gap: 30px;
+    justify-content: space-evenly;
+    animation: schedulescroller 20s linear infinite;
+
+}
+
+.schedulescroller > ul:hover{
+
+    animation-play-state: paused;
+
+}
+
+.schedulescroller ul > li{
+
+    font-family: 'vaidikfont';
+    font-size: 25px;
+    text-align: center;
+    line-height: 30px;
+    padding: 5px 20px;
+    border-radius: 10px;
+
+}
+
+.schedulescroller ul > li img{
+
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border: 5px solid var(--primarycolor);
+    border-radius: 50%;
+    background-color: var(--primarycolor);
+    filter: drop-shadow(2px 5px 20px var(--primarycolor));
+    box-shadow: 2px 5px 50px var(--secondarycolor) inset;
+
+}
+
+.schedulescroller ul li > i{
+
+    color: #fff;
+    background-color: var(--secondarycolor);
+    height: 30px;
+    width: 100%;
+    padding: 0px 10px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 9999999;
+
+
+}
+
+@keyframes schedulescroller {
+    
+    from{
+
+        transform: translateX(100%);
+        border: none;
+
+    }to{
+
+        transform: translateX(-100%);
+
+    }
+
+}

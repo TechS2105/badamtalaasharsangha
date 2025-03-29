@@ -1,0 +1,103 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url(../fonts/Jaini-Regular.ttf);
+}
+
+:root{
+
+    --primarycolor: #ffff3f;
+    --secondarycolor: #2b9348;
+
+}
+
+.horizontalscroller{
+
+    width: 100%;
+    height: 50px;
+    background-color: var(--secondarycolor);
+    display: flex;
+    align-items:center;
+
+}
+
+.horizontalscroller > .text{
+
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.text > h3{
+
+    margin-bottom: 0;
+    font-family: 'vaidikfont';
+    color: var(--primarycolor);
+    font-size: 30px;
+
+}
+
+.horizontalscroller > .scroller{
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    background-color: var(--primarycolor);
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.scroller > ul{
+
+    display: inline-flex;
+    gap: 10px;
+    height: 100%;
+    max-width: 147.9%;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 20px;
+    list-style: none;
+    animation: scroleranimation 20s linear infinite;
+
+}
+
+.scroller > ul:hover{
+
+    animation-play-state: paused;
+
+}
+
+.scroller ul > li{
+
+    color: var(--secondarycolor);
+    font-family: 'vaidikfont';
+    display: inline-flex;
+    justify-content: center;
+    width: 300px;
+
+}
+
+@keyframes scroleranimation{
+
+   from{
+
+    transform: translateX(100%);
+
+   }to{
+
+    transform: translateX(-100%);
+
+   }
+
+}

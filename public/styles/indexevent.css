@@ -1,0 +1,899 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primarycolor: #ffff3f;
+    --secondarycolor: #2b9348;
+
+}
+
+@font-face {
+
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+
+}
+
+.eventsection{
+
+    /* background-image: url('https://static.vecteezy.com/system/resources/previews/011/092/319/non_2x/happy-durga-puja-illustrations-durga-face-happy-navratri-bengali-typography-free-vector.jpg'); */
+    /* background-image: url('https://cdn.wallpapersafari.com/19/88/VwqpzMQ.webp'); */
+    /* background-image: url('https://images.pexels.com/photos/28938866/pexels-photo-28938866/free-photo-of-intricate-durga-puja-idol-in-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    /* background-image: url('https://images.pexels.com/photos/6138443/pexels-photo-6138443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    background-image: url('https://images.pexels.com/photos/14191274/pexels-photo-14191274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.eventsection > .coloroverlay{
+
+    background-color: #00000063;
+    /* background-image: linear-gradient(90deg, #2b93484d 50%, #ffff3f5d 51%); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.coloroverlay > .eventtext{
+
+    width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--secondarycolor);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.eventtext > h2{
+
+    font-size: 40px;
+    font-family: 'vaidikfont';
+    color: var(--primarycolor);
+    margin-bottom: 0;
+
+}
+
+.coloroverlay > .eventbox{
+
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+
+}
+
+.eventbox > .events{
+
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+
+}
+
+.events > .yearlinks{
+
+    width: 100px;
+    background-color: #fff;
+    height: 500px;
+    display: flex;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    overflow: hidden;
+    
+
+}
+
+.yearlinks > ul {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    /* background-color: var(--secondarycolor); */
+
+}
+
+.yearlinks > ul li{
+
+   display: inline-block;
+   font-family: 'vaidikfont';
+   font-size: 25px;
+   text-decoration: none;
+   color: var(--secondarycolor);
+   position: relative;
+   width: 100%;
+   transition: all 0.5s ease;
+   cursor: pointer;
+
+}
+
+.yearlinks > ul li::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondarycolor);
+    transition: all 0.5s ease;
+    transform: scaleX(0);
+
+}
+
+.yearlinks > ul li:hover{
+
+    background-color: #ffff3f;
+    transform: scale(1.2);
+
+}
+
+.yearlinks > ul li:hover::before{
+
+    width: 100%;
+    transform: scaleX(1.1);
+
+}
+
+.events > .eventsbox{
+
+    width: 1000px;
+    height: 500px;
+    border-radius: 50px;
+    /* box-shadow: 2px 2px 100px #fff inset; */
+    overflow: hidden;
+
+}
+
+/** First Box */
+
+.eventsbox > .box1{
+
+    color: #ffffff;
+    height: 100%;
+
+}
+
+.box1 > h3{
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    border-bottom: 5px double #ffff3f;
+    padding: 20px 0px 0px 5px;
+    /* overflow: hidden; */
+
+}
+
+.box1 > .cardbox{
+
+    min-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: cardslider 10s linear infinite;
+
+}
+
+.box1 > .cardbox:hover{
+
+    animation-play-state: paused;
+
+}
+
+@keyframes cardslider {
+    
+    from{
+
+        transform: translateX(-100%);
+
+    }to{
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.cardbox > .card{
+
+    width: 300px;
+    height: 400px;
+    background-color: #2b9348;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 5px 20px black;
+
+}
+
+.card > .cardimage{
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.cardimage > img{
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.card > .cardtext{
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primarycolor);
+
+}
+
+.cardtext > h3{
+
+    font-family: 'vaidikfont';
+    color: #2b9348;
+
+}
+
+.cardtext > img{
+
+    width: 80px;
+    object-fit: cover;
+    height: 80px;
+    margin-top: -10px;
+
+}
+
+.cardtext > button{
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    background-color: #2b9348;
+    color: #ffff3f;
+    width: 200px;
+    border-radius: 5px;
+
+
+}
+
+/** Second Box */
+.eventbox>.box2 {
+
+    color: #ffffff;
+    height: 100%;
+
+}
+
+.box2>h3 {
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    border-bottom: 5px double #ffff3f;
+    padding: 20px 0px 0px 5px;
+    color: snow;
+    /* overflow: hidden; */
+
+}
+
+.box2>.cardbox {
+
+    min-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: cardslider 10s linear infinite;
+
+}
+
+.box2>.cardbox:hover {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes cardslider {
+
+    from {
+
+        transform: translateX(-100%);
+
+    }
+
+    to {
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.cardbox>.card {
+
+    width: 300px;
+    height: 400px;
+    background-color: #2b9348;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 5px 20px black;
+
+}
+
+.card>.cardimage {
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.cardimage>img {
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.card>.cardtext {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primarycolor);
+
+}
+
+.cardtext>h3 {
+
+    font-family: 'vaidikfont';
+    color: #2b9348;
+
+}
+
+.cardtext>img {
+
+    width: 80px;
+    object-fit: cover;
+    height: 80px;
+    margin-top: -10px;
+
+}
+
+.cardtext>button {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    background-color: #2b9348;
+    color: #ffff3f;
+    width: 200px;
+    border-radius: 5px;
+
+
+}
+
+/** Third Box */
+.eventbox>.box3 {
+
+    color: #ffffff;
+    height: 100%;
+
+}
+
+.box3>h3 {
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    border-bottom: 5px double #ffff3f;
+    padding: 20px 0px 0px 5px;
+    color: snow;
+    /* overflow: hidden; */
+
+}
+
+.box3>.cardbox {
+
+    min-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: cardslider 10s linear infinite;
+
+}
+
+.box3>.cardbox:hover {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes cardslider {
+
+    from {
+
+        transform: translateX(-100%);
+
+    }
+
+    to {
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.cardbox>.card {
+
+    width: 300px;
+    height: 400px;
+    background-color: #2b9348;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 5px 20px black;
+
+}
+
+.card>.cardimage {
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.cardimage>img {
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.card>.cardtext {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primarycolor);
+
+}
+
+.cardtext>h3 {
+
+    font-family: 'vaidikfont';
+    color: #2b9348;
+
+}
+
+.cardtext>img {
+
+    width: 80px;
+    object-fit: cover;
+    height: 80px;
+    margin-top: -10px;
+
+}
+
+.cardtext>button {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    background-color: #2b9348;
+    color: #ffff3f;
+    width: 200px;
+    border-radius: 5px;
+
+
+}
+
+/** Fourth Box */
+
+.eventbox>.box4 {
+
+    color: #ffffff;
+    height: 100%;
+
+}
+
+.box4>h3 {
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    border-bottom: 5px double #ffff3f;
+    padding: 20px 0px 0px 5px;
+    color: snow;
+    /* overflow: hidden; */
+
+}
+
+.box4>.cardbox {
+
+    min-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: cardslider 10s linear infinite;
+
+}
+
+.box4>.cardbox:hover {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes cardslider {
+
+    from {
+
+        transform: translateX(-100%);
+
+    }
+
+    to {
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.cardbox>.card {
+
+    width: 300px;
+    height: 400px;
+    background-color: #2b9348;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 5px 20px black;
+
+}
+
+.card>.cardimage {
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.cardimage>img {
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.card>.cardtext {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primarycolor);
+
+}
+
+.cardtext>h3 {
+
+    font-family: 'vaidikfont';
+    color: #2b9348;
+
+}
+
+.cardtext>img {
+
+    width: 80px;
+    object-fit: cover;
+    height: 80px;
+    margin-top: -10px;
+
+}
+
+.cardtext>button {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    background-color: #2b9348;
+    color: #ffff3f;
+    width: 200px;
+    border-radius: 5px;
+
+
+}
+
+/** Fifth Box */
+
+.eventbox>.box5 {
+
+    color: #ffffff;
+    height: 100%;
+
+}
+
+.box5>h3 {
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    border-bottom: 5px double #ffff3f;
+    padding: 20px 0px 0px 5px;
+    color: snow;
+    /* overflow: hidden; */
+
+}
+
+.box5>.cardbox {
+
+    min-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: cardslider 10s linear infinite;
+
+}
+
+.box5>.cardbox:hover {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes cardslider {
+
+    from {
+
+        transform: translateX(-100%);
+
+    }
+
+    to {
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.cardbox>.card {
+
+    width: 300px;
+    height: 400px;
+    background-color: #2b9348;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 5px 20px black;
+
+}
+
+.card>.cardimage {
+
+    width: 100%;
+    height: 50%;
+
+}
+
+.cardimage>img {
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.card>.cardtext {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primarycolor);
+
+}
+
+.cardtext>h3 {
+
+    font-family: 'vaidikfont';
+    color: #2b9348;
+
+}
+
+.cardtext>img {
+
+    width: 80px;
+    object-fit: cover;
+    height: 80px;
+    margin-top: -10px;
+
+}
+
+.cardtext>button {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    background-color: #2b9348;
+    color: #ffff3f;
+    width: 200px;
+    border-radius: 5px;
+
+
+}
+
+.eventbox > button{
+
+    border: none;
+    width: 300px;
+    height: 50px;
+    border-right: 2px solid var(--primarycolor);
+    border-left: 2px solid var(--primarycolor);
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+    color: var(--primarycolor);
+    font-family: 'vaidikfont';
+    font-size: 25px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.eventbox > button::after{
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-bottom: 2px solid var(--primarycolor);
+    transition: all 0.5s ease;
+
+}
+
+.eventbox > button:hover::after{
+
+    width: 100%;
+
+}
+
+.eventbox > button::before{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-bottom: 2px solid var(--primarycolor);
+    transition: all 0.5s ease;
+
+}
+
+.eventbox > button:hover::before{
+
+    width: 100%;
+
+}
+
+.eventbox > button:hover{
+
+    border: none;
+    font-size: 20px;
+    transition: all 0.5s ease;
+
+}
+
+.toggleclass{
+
+    /* transform: translateX(0px); */
+    animation: toggleanime 1s ease;
+
+}
+
+@keyframes toggleanime {
+
+    from{
+
+        transform: translateX(-1000px);
+        filter: blur(10px);
+        font-style: italic;
+
+    }to{
+
+        transform: translateX(0px);
+        filter:blur(0px);
+        font-style: normal;
+
+    }
+    
+}
+
+.cardtoggle{
+
+    animation: cardtoggleanimation 1s ease 0.5s;
+
+}
+
+@keyframes cardtoggleanimation {
+    
+    from{
+
+        transform: translateX(-1000px);
+        filter: blur(10px);
+
+    }to{
+
+        transform: translateX(1000px);
+        filter: blur(0px);
+
+    }
+
+}
