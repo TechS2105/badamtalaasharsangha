@@ -1,10 +1,23 @@
 let logoHeading = document.querySelector(".headingText h2");
-let logoCarousel = document.querySelectorAll(".logocarousel");
+let firstLogoCarousel = document.querySelector(".logocarousel");
+let secondLogoCarousel = document.querySelector(".logocarousel2");
 
 $(logoHeading).css({
   transform: "translateY(500px)",
   opacity: "0",
 });
+
+$(firstLogoCarousel).css({
+  transform: "scale(0)",
+  filter: "blur(10px) greayscale()",
+});
+
+$(secondLogoCarousel).css({
+
+    transform: "scale(0)",
+    filter: "blur(10px) grayscale()"
+
+})
 
 function logoHeadingAnimation() {
     
@@ -37,7 +50,40 @@ function logoHeadingAnimation() {
 }
 
 function logoCarouselAnimation() {
-    
+
+    $(window).on("scroll", () => {
+
+        if ($(window).scrollTop() > 3500) {
+            
+            $(firstLogoCarousel).css({
+              transform: "scale(1)",
+              transition: "all 1s ease 0.7s",
+              filter: "blur(0px)",
+            });
+
+            $(secondLogoCarousel).css({
+              transform: "scale(1)",
+              transition: "all 1s ease 1s",
+              filter: "blur(0px)",
+            });
+
+        } else {
+            
+            $(firstLogoCarousel).css({
+              transform: "scale(0)",
+              transition: "all 1s ease 0.7s",
+              filter: "blur(10px) grayscale()",
+            });
+
+            $(secondLogoCarousel).css({
+              transform: "scale(0)",
+              transition: "all 1s ease",
+              filter: "blur(10px) grayscale()",
+            });
+
+        }
+
+    });
 
 }
 

@@ -146,8 +146,6 @@
 
 .logocarousel2 > .logos2{
 
-    width: 100%;
-    height: 100%;
     animation: secondlogocarousel 30s linear infinite;
     display: inline-block;
 
