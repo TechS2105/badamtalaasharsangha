@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     <link rel="stylesheet" href="/styles/imageshowcase.css">
 </head>
 <body>
@@ -11,6 +13,7 @@
 
         <div class="imagecoloroverlay">
 
+            <!-- Image show case section -->
             <div class="imageshowcase">
 
                 <div class="firstimagebox">
@@ -63,6 +66,7 @@
 
             </div>
 
+            <!-- Image text section -->
             <div class="imagetext">
 
                 <div class="logoimg">
@@ -82,7 +86,22 @@
 
         </div>
 
+        <div class="bigimagecontainer" style="display: none;">
+
+            <i class="ri-close-large-fill" onclick="imageCloseFun()"></i>
+
+            <div class="bigimage">
+
+                <img src="https://images.pexels.com/photos/14289046/pexels-photo-14289046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+
+            </div>
+
+        </div>
+
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/imageshowcase.js"></script>
 
 </body>
 </html>
