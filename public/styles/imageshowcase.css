@@ -1,0 +1,185 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+.imageshowcasesection{
+
+    width: 100%;
+    height: 120vh;
+    /* background-image: url('https://images.pexels.com/photos/28508854/pexels-photo-28508854/free-photo-of-intricate-durga-idol-sculpting-in-kolkata-workshop.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    /* background-image: url('https://images.pexels.com/photos/18972995/pexels-photo-18972995/free-photo-of-candid-shot-of-a-man-touching-a-religious-statue.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    background-image: url('https://images.pexels.com/photos/6138443/pexels-photo-6138443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: 50%;
+
+}
+
+.imageshowcasesection > .imagecoloroverlay{
+
+    width: 100%;
+    height: 100%;
+    background-color: #00000063;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.imagecoloroverlay > .imagetext{
+
+    height: 100%;
+    width: 30%;
+    background-image: linear-gradient(180deg, var(--primary-color) 50%, var(--secondary-color) 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.imagetext > .logoimg{
+
+    border-radius: 50%;
+    animation: borderrotation 20s ease infinite;
+
+}
+
+.logoimg > img{
+
+    width: 250px;
+    height: 250px;
+    border: 5px solid snow;
+    background-color: #ffff3f;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 2px 5px 20px black inset;
+
+}
+
+.imagetext > .textandlink{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.textandlink > h2{
+
+    font-size: 60px;
+    font-family: 'vaidikfont';
+    color: snow;
+    margin-bottom: 20px;
+
+}
+
+.textandlink > a button{
+
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: 'vaidikfont';
+    font-size: 25px;
+    color: var(--secondary-color);
+    background-color: #ffff3f;
+
+}
+
+.imagecoloroverlay > .imageshowcase{
+
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.imageshowcase > .firstimagebox{
+
+    width: 100%;
+    /* background-color: #2b9348; */
+    height: 35%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.imageshowcase > .secondimagebox{
+
+    width: 100%;
+    height: 35%;
+    /* background-color: #ffff3f; */
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.imageshowcase > .thirdimagebox {
+
+    width: 100%;
+    height: 35%;
+    /* background-color: #2b9348; */
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.firstimagebox > .galleryimage{
+
+    width: 400px;
+    height: 300px;
+    /* background-color: #ebebeb; */
+
+}
+
+.galleryimage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid #ebebeb;
+
+}
+
+.secondimagebox > .galleryimage{
+
+    width: 400px;
+    height: 300px;
+    /* background-color: #ebebeb; */
+
+}
+
+.thirdimagebox > .galleryimage{
+
+    width: 400px;
+    height: 300px;
+    /* background-color: #ebebeb; */
+
+}
+
+
+
