@@ -190,7 +190,7 @@
 
     width: 100%;
     height: 100%;
-    background-color: #ebebeba2;
+    background-image: linear-gradient(to left, #ffff3f8a, #2b93489c);
     position: fixed;
     top: 0;
     left: 0;
