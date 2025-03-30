@@ -1,0 +1,196 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+.tropysection{
+
+    width: 100%;
+    height: 60vh;;
+
+}
+
+.tropysection > .trophy{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.trophy > .trophyheading{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.trophyheading > h2{
+
+    font-family: 'vaidikfont';
+    color: var(--secondary-color);
+    font-size: 40px;
+
+}
+
+.trophy > .trophycarousel{
+
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.trophycarousel > .carouselbox{
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+
+}
+
+.carouselbox::before,
+.carouselbox::after{
+
+    position: absolute;
+    top: 0;
+    content: "";
+    height: 100%;
+    width: 350px;
+    z-index: 2;
+
+}
+
+.carouselbox::before{
+
+    background-image: linear-gradient(to left, rgba(235, 235, 235, 0), rgb(235, 235, 235));
+    left: 0;
+
+}
+
+.carouselbox::after{
+
+    background-image: linear-gradient(to right, rgba(235, 235, 235, 0), rgb(235, 235, 235));
+    right: 0;
+
+}
+
+.carouselbox > .trophies{
+
+    height: 100%;
+    display: inline-block;
+    animation: trophyimagecarousel 20s linear infinite;
+
+}
+
+.trophies > img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    filter: drop-shadow(2px 2px 5px black);
+    margin: 0px 20px;
+
+}
+
+.carouselbox:hover .trophies{
+
+    animation-play-state: paused;
+
+}
+
+@keyframes trophyimagecarousel {
+    
+    from{
+
+        transform: translateX(0);
+
+    }to{
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+.trophycarousel > .trophybutton{
+
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.trophybutton > a button{
+
+    width: 250px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'vaidikfont';
+    font-size: 25px;
+    color: #2b9348;
+    border-radius: 10px;
+    border-left: 2px solid #2b9348;
+    border-right: 2px solid #2b9348;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.7s ease;
+
+}
+
+.trophybutton > a button:hover{
+
+    border: none;
+    color: snow;
+
+}
+
+.trophybutton > a button::before{
+
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    content: "";
+    /* background-color: #ffff3f; */
+    background-image: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    width: 100%;
+    height: 0%;
+    transition: all 0.7s ease;
+
+}
+
+.trophybutton > a button:hover::before{
+
+    height: 100%;
+
+}
