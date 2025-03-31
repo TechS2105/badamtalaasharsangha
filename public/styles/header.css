@@ -42,7 +42,7 @@ header{
 .image{
 
     width: 55%;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 

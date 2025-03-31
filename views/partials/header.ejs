@@ -108,62 +108,62 @@
         let logoImage = document.querySelector(".image img");
         let linkBox = document.querySelectorAll(".links .linkbox");
 
-        linkBox.forEach((link) => {
+        // linkBox.forEach((link) => {
 
-            link.style.transform = "scale(0)";
+        //     link.style.transform = "scale(0)";
 
-        });
+        // });
 
-        $(logoImage).css({
+        // $(logoImage).css({
 
-            transform: "scale(0)",
-            opacity: "0"
+        //     transform: "scale(0)",
+        //     opacity: "0"
 
-        });
+        // });
 
-        function logoAnime(){
+        // function logoAnime(){
 
-            $(logoImage).css({
+        //     $(logoImage).css({
 
-                transform: "scale(1)",
-                opacity: "1",
-                transition: "all 0.7s ease"
+        //         transform: "scale(1)",
+        //         opacity: "1",
+        //         transition: "all 0.7s ease"
 
-            });
+        //     });
 
-        }
+        // }
 
-        function linkBoxAnime(){
+        // function linkBoxAnime(){
 
-           $(linkBox[0]).css({
+        //    $(linkBox[0]).css({
 
-                transform: "scale(1)",
-                transition: "all 0.7s ease 0.5s"
+        //         transform: "scale(1)",
+        //         transition: "all 0.7s ease 0.5s"
 
-           });
+        //    });
 
-           $(linkBox[1]).css({
+        //    $(linkBox[1]).css({
 
-            transform: "scale(1)",
-            transition: "all 0.7s ease 0.6s"
+        //     transform: "scale(1)",
+        //     transition: "all 0.7s ease 0.6s"
 
-           });
+        //    });
 
-           $(linkBox[2]).css({
+        //    $(linkBox[2]).css({
 
-            transform: "scale(1)",
-            transition: "all 0.7s ease 0.7s"
+        //     transform: "scale(1)",
+        //     transition: "all 0.7s ease 0.7s"
 
-           });
+        //    });
 
-           $(linkBox[3]).css({
+        //    $(linkBox[3]).css({
 
-            transform: "scale(1)",
-            transition: "all 0.7s ease 0.8s"
+        //     transform: "scale(1)",
+        //     transition: "all 0.7s ease 0.8s"
 
-           });
+        //    });
 
-        }
+        // }
 
         function menuFunction(){
 
@@ -223,8 +223,8 @@
             setTimeout(() => {
 
                 menuFunction();
-                logoAnime();
-                linkBoxAnime();
+                // logoAnime();
+                // linkBoxAnime();
 
             });
 
