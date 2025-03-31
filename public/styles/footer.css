@@ -37,7 +37,7 @@ footer > .footermainbox{
 
 }
 
-.footermainbox > .box1{
+.footermainbox > .fbox1{
 
     width: 350px;
     height: 100%;
@@ -47,7 +47,7 @@ footer > .footermainbox{
 
 }
 
-.footermainbox>.box2 {
+.footermainbox>.fbox2 {
 
     width: 350px;
     height: 100%;
@@ -57,7 +57,7 @@ footer > .footermainbox{
 
 }
 
-.footermainbox>.box3 {
+.footermainbox>.fbox3 {
 
     width: 350px;
     height: 100%;
@@ -67,7 +67,7 @@ footer > .footermainbox{
 
 }
 
-.footermainbox>.box4 {
+.footermainbox>.fbox4 {
 
     width: 350px;
     height: 100%;
@@ -157,7 +157,7 @@ footer > .footercopyrightbox{
     
 }
 
-.box2 > p{
+.fbox2 > p{
 
     font-size: 40px;
     font-family: 'vaidikfont';
@@ -166,7 +166,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > p::before{
+.fbox2 > p::before{
 
     position: absolute;
     bottom: 0;
@@ -178,7 +178,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > ul {
+.fbox2 > ul {
 
     list-style-type: none;
     line-height: 50px;
@@ -186,7 +186,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > ul li a{
+.fbox2 > ul li a{
 
     font-family: 'vaidikfont';
     text-decoration: none;
@@ -200,7 +200,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > ul li a::before{
+.fbox2 > ul li a::before{
 
     position: absolute;
     bottom: 0;
@@ -215,7 +215,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > ul li a:hover{
+.fbox2 > ul li a:hover{
 
     transform: translateX(10px);
     color: snow;
@@ -223,7 +223,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box2 > ul li a:hover::before{
+.fbox2 > ul li a:hover::before{
 
     width: 70%;
 
@@ -231,7 +231,7 @@ footer > .footercopyrightbox{
 
 /** Box 3 */
 
-.box3 > p {
+.fbox3 > p {
 
     font-size: 40px;
     font-family: 'vaidikfont';
@@ -240,7 +240,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box3 > p::before {
+.fbox3 > p::before {
 
     position: absolute;
     bottom: 0;
@@ -252,7 +252,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box3 > ul {
+.fbox3 > ul {
 
     list-style-type: none;
     line-height: 50px;
@@ -260,7 +260,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box3>ul li a {
+.fbox3>ul li a {
 
     font-family: 'vaidikfont';
     text-decoration: none;
@@ -274,7 +274,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box3>ul li a::before {
+.fbox3>ul li a::before {
 
     position: absolute;
     bottom: 0;
@@ -289,7 +289,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box3>ul li a:hover {
+.fbox3>ul li a:hover {
 
     transform: translateX(10px);
     color: snow;
@@ -297,14 +297,14 @@ footer > .footercopyrightbox{
 
 }
 
-.box3>ul li a:hover::before {
+.fbox3>ul li a:hover::before {
 
     width: 70%;
 
 }
 
 /** Box 4 */
-.box4>p {
+.fbox4>p {
 
     font-size: 40px;
     font-family: 'vaidikfont';
@@ -313,7 +313,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box4>p::before {
+.fbox4>p::before {
 
     position: absolute;
     bottom: 0;
@@ -325,14 +325,14 @@ footer > .footercopyrightbox{
 
 }
 
-.box4>ul {
+.fbox4>ul {
 
     list-style-type: none;
     padding-left: 0;
 
 }
 
-.box4>ul li{
+.fbox4>ul li{
 
     font-family: 'vaidikfont';
     text-decoration: none;
@@ -347,7 +347,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box4 > ul li .links a {
+.fbox4 > ul li .links a {
 
     text-decoration: none;
     font-size: 25px;
@@ -364,7 +364,7 @@ footer > .footercopyrightbox{
 
 }
 
-.box4 > ul li .links a:hover{
+.fbox4 > ul li .links a:hover{
 
     background-color: #2b9348;
     color: #ffff3f;
