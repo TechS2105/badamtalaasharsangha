@@ -51,7 +51,8 @@
     width: 500px;
     text-align: center;
     border-radius: 10px;
-    background-color: var(--secondarycolor);
+    /* background-color: var(--secondarycolor); */
+    background-image: linear-gradient(to left, var(--primarycolor), var(--secondarycolor));
     margin-bottom: 20px;
     overflow: hidden;
     display: flex;
@@ -64,7 +65,7 @@
 
     font-size: 40px;
     font-family: 'vaidikfont';
-    color: var(--primarycolor);
+    color: snow;
     margin-bottom: 0;
 
 }
