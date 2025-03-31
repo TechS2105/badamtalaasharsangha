@@ -33,7 +33,7 @@ app.get('/resubmission', (req, res) => {
 
 })
 
-app.post("/subscription", async (req, res) => {
+app.post("/thankyou", async (req, res) => {
 
     const name = req.body.name;
     const email = req.body.email;
