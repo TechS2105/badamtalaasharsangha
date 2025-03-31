@@ -46,7 +46,64 @@
 
 }
 
-.horizontalscroller > .scroller{
+.scroller{
+
+    width: 80%;
+    height: 100%;
+    background-color: #ffff3f;
+    overflow: hidden;
+
+}
+
+.scroller > .scrolltext{
+
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+
+}
+
+.scrolltext > ul {
+
+    list-style-type: none;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    animation: textscrollanime 20s linear infinite;
+
+}
+
+.scrolltext > ul:hover{
+
+    animation-play-state: paused;
+
+}
+
+.scrolltext > ul li{
+
+    margin-right: 20px;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    color: #2b9348;
+
+}
+
+@keyframes textscrollanime{
+    
+    from{
+
+        transform: translateX(65%);
+
+    }
+    to{
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+/* .horizontalscroller > .scroller{
 
     display: flex;
     align-items: center;
@@ -100,4 +157,4 @@
 
    }
 
-}
+} */
