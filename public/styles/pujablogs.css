@@ -1,0 +1,285 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primary-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+}
+
+.pujablogsection{
+
+    background-image: url('https://images.pexels.com/photos/18362622/pexels-photo-18362622/free-photo-of-sculptures-inside-the-66-pally-durga-puja-pandal-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+
+}
+
+.pujablogsection > .blogsectioncoloroverlay{
+
+    background-color: #00000065;
+    height: 100%;
+
+}
+
+.blogsectioncoloroverlay > .blogtext{
+
+    width: 100%;
+    height: 20%;
+    /* background-color: var(--primary-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #2b9348; */
+
+}
+
+.blogtext > h2{
+
+    font-family: 'vaidikfont';
+    font-size: 40px;
+    color: snow;
+    background-image: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    position: relative;
+    width: 400px;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 10px;
+
+}
+
+/* .blogtext > h2::before{
+
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    height: 4px ;
+    width: 500px;
+    background-color: #ffff3f;
+
+} */
+
+.blogsectioncoloroverlay > .blogsection{
+
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.blogsection > .blogcarousel{
+
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: blogcarousel 20s linear infinite;
+
+}
+
+.blogsection:hover .blogcarousel{
+
+    animation-play-state: paused;
+
+}
+
+@keyframes blogcarousel {
+
+    from{
+
+        transform: translateX(-100%);
+
+    }
+    to{
+
+        transform: translateX(0);
+
+    }
+    
+}
+
+.blogcarousel > .blogbox{
+
+    width: 350px;
+    height: 90%;
+    background-color: #ffff3f;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0px 20px;
+
+}
+
+.blogbox > .blogimage{
+
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    background-color: #2b9348;
+
+}
+
+.blogimage > a img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.7s ease;
+
+}
+
+.blogimage > a img:hover{
+
+    transform: scale(1.4);
+
+}
+
+.blogbox > .blogtext{
+
+    height: 40%;
+    background-color: #ebebeb;
+    line-height: 40px;
+
+}
+
+.blogtext1 > .blogcontent1{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: #ffff3f; */
+
+}
+
+.blogcontent1 > img{
+
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+
+}
+
+.blogcontent1 > span{
+
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    color: #2b9348;
+
+}
+
+.blogcontent2 {
+
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 10px;
+
+}
+
+.blogcontent2 > i{
+
+    font-size: 20px;
+    color: #2b9348;
+
+}
+
+.blogcontent2 > p{
+
+    margin-bottom: 0;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    color: #2b9348;
+
+}
+
+.blogtext > .blogtext2{
+
+    font-family: 'vaidikfont';
+    text-align: center;
+    background-color: #2b9348;
+
+}
+
+.blogtext2 > a {
+
+    text-decoration: none;
+    color: #ffff3f;
+    display: inline-block;
+    width: 100%;
+    font-size: 23px;
+    animation: blogtextscroller 10s linear infinite;
+
+}
+
+@keyframes blogtextscroller {
+    
+    from{
+
+        transform: translateX(100%);
+
+    }to{
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+.blogtext3{
+
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.blogtext3 > img{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 2px 2px 5px black;
+
+}
+
+.blogtext3 > p{
+
+    font-family: 'vaidikfont';
+    font-size: 20px;
+
+}
+
+.blogtext3 > p span{
+
+    color: #ffffff;
+    font-size: 25px;
+    font-style: italic;
+    background-color: #2b9348;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 20px;
+    /* border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px; */
+    border-radius: 5px;
+    
+
+}
