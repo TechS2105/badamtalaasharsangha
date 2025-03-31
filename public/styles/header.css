@@ -42,10 +42,11 @@ header{
 .image{
 
     width: 55%;
+    overflow: hidden;
 
 }
 
-.image > img{
+.image > a img{
 
     width: 150px;
     float: right;

@@ -1,0 +1,372 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+:root{
+
+    --primay-color: #ffff3f;
+    --secondary-color: #2b9348;
+
+}
+
+@font-face {
+
+    font-family: 'vaidikfont';
+    src: url('../fonts/Jaini-Regular.ttf');
+
+}
+
+footer{
+
+    height: 60vh;
+    width: 100%;
+    background-color: #2b9348;
+
+}
+
+footer > .footermainbox{
+
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+.footermainbox > .box1{
+
+    width: 350px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footermainbox>.box2 {
+
+    width: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.footermainbox>.box3 {
+
+    width: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.footermainbox>.box4 {
+
+    width: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+footer > .footercopyrightbox{
+
+    width: 100%;
+    height: 10%;
+    background-color: #ffff3f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.footercopyrightbox::before{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 0.5px;
+    background-color: #ffff3f;
+    width: 100%;
+
+}
+
+.footercopyrightbox > p{
+
+    margin-bottom: 0;
+    color: #2b9348;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+.footerimagebox{
+
+    position: relative;
+    padding: 20px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    
+}
+
+.footerimagebox > img{
+
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+
+}
+
+.footerimagebox::before{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    background-image: conic-gradient(var(--primay-color), var(--secondary-color), var(--primay-color), var(--secondary-color), var(--primay-color));
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+
+}
+
+@keyframes rotate {
+
+    from{
+
+        transform: rotate(0);
+
+    }to{
+
+        transform: rotate(360deg);
+
+    }
+    
+}
+
+.box2 > p{
+
+    font-size: 40px;
+    font-family: 'vaidikfont';
+    color: #ffff3f;
+    position: relative;
+
+}
+
+.box2 > p::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    content: "";
+    height: 3px;
+    background-color: #ffff3f;
+
+}
+
+.box2 > ul {
+
+    list-style-type: none;
+    line-height: 50px;
+    padding-left: 0;
+
+}
+
+.box2 > ul li a{
+
+    font-family: 'vaidikfont';
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    transition: all 0.7s ease;
+
+}
+
+.box2 > ul li a::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffff3f;
+    content: "";
+    z-index: -1;
+    transition: all 0.7s ease;
+    
+
+}
+
+.box2 > ul li a:hover{
+
+    transform: translateX(10px);
+    color: snow;
+    padding-left: 10px;
+
+}
+
+.box2 > ul li a:hover::before{
+
+    width: 70%;
+
+}
+
+/** Box 3 */
+
+.box3 > p {
+
+    font-size: 40px;
+    font-family: 'vaidikfont';
+    color: #ffff3f;
+    position: relative;
+
+}
+
+.box3 > p::before {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    content: "";
+    height: 3px;
+    background-color: #ffff3f;
+
+}
+
+.box3 > ul {
+
+    list-style-type: none;
+    line-height: 50px;
+    padding-left: 0;
+
+}
+
+.box3>ul li a {
+
+    font-family: 'vaidikfont';
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    transition: all 0.7s ease;
+
+}
+
+.box3>ul li a::before {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffff3f;
+    content: "";
+    z-index: -1;
+    transition: all 0.7s ease;
+
+
+}
+
+.box3>ul li a:hover {
+
+    transform: translateX(10px);
+    color: snow;
+    padding-left: 10px;
+
+}
+
+.box3>ul li a:hover::before {
+
+    width: 70%;
+
+}
+
+/** Box 4 */
+.box4>p {
+
+    font-size: 40px;
+    font-family: 'vaidikfont';
+    color: #ffff3f;
+    position: relative;
+
+}
+
+.box4>p::before {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    content: "";
+    height: 3px;
+    background-color: #ffff3f;
+
+}
+
+.box4>ul {
+
+    list-style-type: none;
+    padding-left: 0;
+
+}
+
+.box4>ul li{
+
+    font-family: 'vaidikfont';
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    transition: all 0.7s ease;
+    margin-bottom: 15px;
+
+}
+
+.box4 > ul li .links a {
+
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 20px;
+    color: #2b9348;
+    background-color: #ffff3f;
+    /* padding: 3px 5px 3px 5px; */
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+
+}
+
+.box4 > ul li .links a:hover{
+
+    background-color: #2b9348;
+    color: #ffff3f;
+
+}
