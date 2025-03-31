@@ -61,9 +61,10 @@ body{
 .coloroverlay > h2{
 
     text-align: center;
-    background-color: var(--secondarycolor);
+    /* background-color: var(--secondarycolor); */
+    background-image: linear-gradient(to left, var(--primarycolor), var(--secondarycolor));
     width: 400px;
-    color: var(--primarycolor);
+    color: snow;
     border-radius: 10px;
     font-family: 'vaidikfont';
     font-size: 40px;
