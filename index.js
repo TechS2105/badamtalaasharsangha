@@ -35,24 +35,30 @@ app.get('/resubmission', (req, res) => {
 
 app.post("/thankyou", async (req, res) => {
 
-    const name = req.body.name;
-    const email = req.body.email;
+    try {
+        const name = req.body.name;
+        const email = req.body.email;
 
-    const checkmembers = await db.query("SELECT * FROM members WHERE name = $1", [name]);
+        const checkmembers = await db.query("SELECT * FROM members WHERE name = $1", [name]);
 
-    if (checkmembers.rows.length > 0) {
+        if (checkmembers.rows.length > 0) {
          
-        res.redirect('/resubmission');
+            res.redirect('/resubmission');
 
-    }else {
+        } else {
         
-        const result = await db.query(
-          "INSERT INTO members(name, email) VALUES ($1, $2) RETURNING *",
-          [name, email]
-        );
-        let newMember = [];
-        newMember = result.rows[0];
-        res.render("thankyou.ejs", { member: newMember });
+            const result = await db.query(
+                "INSERT INTO members(name, email) VALUES ($1, $2) RETURNING *",
+                [name, email]
+            );
+            let newMember = [];
+            newMember = result.rows[0];
+            res.render("thankyou.ejs", { member: newMember });
+
+        }
+    } catch (error) {
+        
+        console.error("There have something error in this file");
 
     }
 
