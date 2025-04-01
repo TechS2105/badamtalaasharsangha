@@ -2,6 +2,18 @@ let pujaBlogHeadingBackground = document.querySelector(".blogsectioncoloroverlay
 let pujaBlogHeading = document.querySelector(".blogsectioncoloroverlay .blogtext h2");
 let blogCarouselSection = document.querySelector(".blogsection");
 let blogCarouselBox = document.querySelectorAll(".blogcarousel");
+let blogBoxDate = document.querySelectorAll(
+  ".blogcarousel .blogbox .carouselblogtext .blogtext1 .blogcontent2 p"
+);
+
+const date = new Date().toDateString();
+
+blogBoxDate.forEach((boxDate) => {
+
+  console.log(boxDate);
+  boxDate.innerHTML = `<p style="margin-bottom: 0"> ${date} </p>`;
+
+});
 
 blogCarouselBox.forEach((box) => {
 

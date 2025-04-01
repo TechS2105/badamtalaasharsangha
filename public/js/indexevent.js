@@ -16,11 +16,11 @@ let eventYearBox = document.querySelector(".events .yearlinks");
 let eventScrollerSection = document.querySelectorAll(".eventsbox");
 let eventBtn = document.getElementById("button");
 
-firstCardBoxHeading.classList.add("toggleclass");
-secondCardBoxHeading.classList.add("toggleclass");
-thirdCardBoxHeading.classList.add("toggleclass");
-fourthCardBoxHeading.classList.add("toggleclass");
-fifthCardBoxHeading.classList.add("toggleclass");
+// firstCardBoxHeading.classList.add("toggleclass");
+// secondCardBoxHeading.classList.add("toggleclass");
+// thirdCardBoxHeading.classList.add("toggleclass");
+// fourthCardBoxHeading.classList.add("toggleclass");
+// fifthCardBoxHeading.classList.add("toggleclass");
 // secondCardBoxHeading.style.transform = `translateX(-1000px)`;
 // thirdCardBoxHeading.style.transform = `translateX(-1000px)`;
 // fourthCardBoxHeading.style.transform = `translateX(-1000px)`;
@@ -137,6 +137,8 @@ function yearLinkFunction() {
   
   yearLinks[0].addEventListener("click", () => {
 
+    firstCardBoxHeading.classList.add("toggleclass");
+
     yearLinks[0].style.backgroundColor = "#2b9348";
     yearLinks[0].style.color = "#ffff3f";
     yearLinks[1].style.backgroundColor = "transparent";
@@ -161,6 +163,8 @@ function yearLinkFunction() {
     // secondCardBoxHeading.style.transform = `translateX(0px)`;
     // secondCardBoxHeading.style.transition = "all 0.5s ease";
 
+    secondCardBoxHeading.classList.add("toggleclass");
+
     yearLinks[1].style.backgroundColor = "#2b9348";
     yearLinks[1].style.color = "#ffff3f";
     yearLinks[2].style.backgroundColor = "transparent";
@@ -184,6 +188,7 @@ function yearLinkFunction() {
 
     // thirdCardBoxHeading.style.transform = `translateX(0px)`;
     // thirdCardBoxHeading.style.transition = "all 0.5s ease";
+     thirdCardBoxHeading.classList.add("toggleclass");
 
     yearLinks[4].style.backgroundColor = "transparent";
     yearLinks[4].style.color = "#2b9348";
@@ -208,6 +213,7 @@ function yearLinkFunction() {
 
     // fourthCardBoxHeading.style.transform = `translateX(0px)`;
     // fourthCardBoxHeading.style.transition = "all 0.5s ease";
+    fourthCardBoxHeading.classList.add("toggleclass");
 
     yearLinks[4].style.backgroundColor = "transparent";
     yearLinks[4].style.color = "#2b9348";
@@ -232,6 +238,7 @@ function yearLinkFunction() {
 
     // fifthCardBoxHeading.style.transform = `translateX(0px)`;
     // fifthCardBoxHeading.style.transition = "all 0.5s ease";
+    fifthCardBoxHeading.classList.add("toggleclass");
 
     yearLinks[4].style.backgroundColor = "#2b9348";
     yearLinks[4].style.color = "#ffff3f";
