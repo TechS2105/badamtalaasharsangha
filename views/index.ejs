@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet">
     <title>Badamtala Ashar Sangha</title>
 </head>
-<body style=" background-color: #ebebeb">
+<body style=" background-color: #ebebeb;">
     
     <%- include('./partials/header.ejs') %>
     <%- include('./partials/slider.ejs') %>
@@ -22,6 +24,67 @@
     <%- include('./partials/trophysection.ejs') %>
     <%- include('./partials/pujablogs.ejs') %>
     <%- include('./partials/footer.ejs') %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        let scrollBtn = document.createElement("div");
+        scrollBtn.classList.add("scrollTop");
+        let scrollTop = document.querySelector(".scrollTop");
+        document.querySelector("body").appendChild(scrollBtn);
+
+        $(scrollBtn).css({
+
+            position: "fixed",
+            backgroundColor: "#2b9348",
+            height: "50px",
+            width: "50px",
+            zIndex: "9999999",
+            right: "20px",
+            bottom: "20px",
+            borderRadius: "10%",
+            display: "flex",
+            justifyContent: "center",
+            alignItem: "center",
+            cursor: "pointer",
+            transform: "scale(0)",
+            boxShadow: "2px 5px 20px #ffff3f inset"
+
+        });
+
+        $(scrollBtn).html(`<i class="ri-arrow-up-double-fill" style="color: #ffff3f; font-size: 33px"></i>`);
+
+        $(window).on("scroll", () => {
+
+            if($(window).scrollTop() > 700){
+
+                $(scrollBtn).css({
+
+                    transform: "scale(1)",
+                    transition: "all 0.5s ease",
+
+                });
+
+            }else{
+
+                $(scrollBtn).css({
+
+                    transform: "scale(0)",
+                    transition: "all 0.5s ease"
+
+                })
+
+            }
+
+        });
+
+        $(scrollBtn).on("click", () => {
+
+            $(window).scrollTop(0);
+
+        });
+
+    </script>
 
 </body>
 </html>
