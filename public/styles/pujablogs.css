@@ -32,6 +32,10 @@
 
     background-color: #00000065;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -44,20 +48,27 @@
     align-items: center;
     justify-content: center;
     /* background-color: #2b9348; */
+    overflow: hidden;
+    text-align: center;
 
 }
 
-.blogtext > h2{
+.blogtext > .blogheadingsecondbox{
+
+    background-image: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+
+ .blogheadingsecondbox > h2{
 
     font-family: 'vaidikfont';
     font-size: 40px;
     color: snow;
-    background-image: linear-gradient(to left, var(--primary-color), var(--secondary-color));
-    position: relative;
+    /* position: relative; */
     width: 400px;
     text-align: center;
-    padding: 5px 0px;
-    border-radius: 10px;
 
 }
 
@@ -148,7 +159,7 @@
 
 }
 
-.blogbox > .blogtext{
+.blogbox > .carouselblogtext{
 
     height: 40%;
     background-color: #ebebeb;
@@ -206,7 +217,7 @@
 
 }
 
-.blogtext > .blogtext2{
+.carouselblogtext > .blogtext2{
 
     font-family: 'vaidikfont';
     text-align: center;
@@ -270,7 +281,7 @@
 .blogtext3 > p span{
 
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     font-style: italic;
     background-color: #2b9348;
     width: 100%;
