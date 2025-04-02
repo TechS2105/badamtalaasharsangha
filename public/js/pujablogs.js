@@ -10,7 +10,6 @@ const date = new Date().toDateString();
 
 blogBoxDate.forEach((boxDate) => {
 
-  console.log(boxDate);
   boxDate.innerHTML = `<p style="margin-bottom: 0"> ${date} </p>`;
 
 });
