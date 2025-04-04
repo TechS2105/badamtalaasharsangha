@@ -12,7 +12,7 @@ const aboutSectionAnimation = () => {
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 500) {
+        if (window.scrollY > 300) {
         
             aboutHeading.style.transform = "scale(1)";
             aboutHeading.style.transition = "all 0.7s ease";

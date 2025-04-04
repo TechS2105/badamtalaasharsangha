@@ -48,7 +48,7 @@ function scrollingFunction() {
     
     $(window).on("scroll", () => {
 
-        if ($(window).scrollTop() > 3000) {
+        if ($(window).scrollTop() > 2500) {
             
           $(sideBox).css({
                 
@@ -217,7 +217,7 @@ function videoBoxAnimation() {
 
   $(window).on("scroll", () => {
 
-    if ($(window).scrollTop() > 3000) {
+    if ($(window).scrollTop() > 2500) {
       
       $(videoBox[0]).css({
 

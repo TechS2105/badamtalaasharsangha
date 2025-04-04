@@ -99,6 +99,36 @@
 
     </header>
 
+    <div class="smallscreenheader">
+
+        <div class="header">
+
+            <div class="logbox">
+
+                <a href="/"> <img src="/images/logo.png" alt=""> </a>
+
+            </div>
+            <div class="navbox">
+
+                <ul>
+
+                    <li><a href="/"> HOME </a></li>
+                    <li><a href="#"> ABOUT </a></li>
+                    <li><a href="#"> CLUB MEMBERS </a></li>
+                    <li><a href="#"> ADMINISTRATION </a></li>
+                    <li><a href="#"> PUJA GALLERY </a></li>
+                    <li><a href="#"> PUJA EVENTS </a></li>
+                    <li><a href="#"> PUJA BLOGS </a></li>
+                    <li><a href="#"> CONTACT </a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
 
@@ -106,122 +136,113 @@
         let memberSubMenu = document.getElementById("membersid");
         let logoImage = document.querySelector(".image img");
         let linkBox = document.querySelectorAll(".links .linkbox");
+        // let largeHeaderSection = document.querySelector(".largescreenheader");
+        let smallHeaderSection = document.querySelector(".smallscreenheader");
+        let header = document.querySelector("header");
 
-        // linkBox.forEach((link) => {
-
-        //     link.style.transform = "scale(0)";
-
-        // });
-
-        // $(logoImage).css({
-
-        //     transform: "scale(0)",
-        //     opacity: "0"
-
-        // });
-
-        // function logoAnime(){
-
-        //     $(logoImage).css({
-
-        //         transform: "scale(1)",
-        //         opacity: "1",
-        //         transition: "all 0.7s ease"
-
-        //     });
-
-        // }
-
-        // function linkBoxAnime(){
-
-        //    $(linkBox[0]).css({
-
-        //         transform: "scale(1)",
-        //         transition: "all 0.7s ease 0.5s"
-
-        //    });
-
-        //    $(linkBox[1]).css({
-
-        //     transform: "scale(1)",
-        //     transition: "all 0.7s ease 0.6s"
-
-        //    });
-
-        //    $(linkBox[2]).css({
-
-        //     transform: "scale(1)",
-        //     transition: "all 0.7s ease 0.7s"
-
-        //    });
-
-        //    $(linkBox[3]).css({
-
-        //     transform: "scale(1)",
-        //     transition: "all 0.7s ease 0.8s"
-
-        //    });
-
-        // }
+        smallHeaderSection.style.transform = "translate(-50%, -50%) translateY(-1000px)";
+        smallHeaderSection.style.filter = "blur(10px)";
 
         function menuFunction(){
 
-        $(aboutSubMenu).on({
+            $(aboutSubMenu).on({
 
-            "mouseover": function (){
+                "mouseover": function (){
 
-                $(".submenu").css({
+                    $(".submenu").css({
 
-                    display: "flex",
+                        display: "flex",
 
-                });
+                    });
 
-            },
+                },
 
-            "mouseout": function (){
+                "mouseout": function (){
 
-                $(".submenu").css({
+                    $(".submenu").css({
 
-                    display: "none",
-                    transition: "all 1s ease"
+                        display: "none",
+                        transition: "all 1s ease"
 
-                });
+                    });
 
-            }
+                }
 
-        });
+            });
 
-        $(memberSubMenu).on({
+            $(memberSubMenu).on({
 
-            "mouseover": function (){
+                "mouseover": function (){
 
-                $('.submenu2').css({
+                    $('.submenu2').css({
 
-                    display: "flex"
+                        display: "flex"
 
-                });
+                    });
 
-            },
+                },
 
-            "mouseout": function (){
+                "mouseout": function (){
 
-                $('.submenu2').css({
+                    $('.submenu2').css({
 
-                    display: "none"
+                        display: "none"
 
-                })
+                    })
 
-            }
+                }
 
-        });
+            });
 
-    }
+        }
+
+        function headerHideShowAnimation(){
+
+            window.addEventListener("scroll", () => {
+
+                if($(window).scrollTop() > 100){
+
+                    header.classList.add('hidden');
+
+                    $(smallHeaderSection).css({
+
+                        transform: "translate(-50%, -50%) translateY(0px)",
+                        transition: "all 0.5s ease",
+                        filter: "blur(0px)",
+                        position: "fixed",
+                        top: "10%",
+                        left: "50%",
+                        zIndex: "999999999"
+
+                    });
+
+
+                }else{
+
+
+                    header.classList.remove('hidden');
+
+                    $(smallHeaderSection).css({
+
+                        transform: "translateY(-1000px) translate(-50%, -50%)",
+                        filter: "blur(10px)",
+                        position: "fixed",
+                        transition: "all 2s ease"
+
+                    });
+
+                }
+
+            });
+
+        }
 
         window.addEventListener("load", () => {
 
             setTimeout(() => {
 
                 menuFunction();
+                headerHideShowAnimation();
                 // logoAnime();
                 // linkBoxAnime();
 

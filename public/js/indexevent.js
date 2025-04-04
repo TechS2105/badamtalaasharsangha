@@ -45,7 +45,7 @@ function eventBoxAnimation(){
 
   $(window).on("scroll", () => {
 
-    if ($(window).scrollTop() > 1500) {
+    if ($(window).scrollTop() > 1000) {
 
       // $(eventSection).css({
 

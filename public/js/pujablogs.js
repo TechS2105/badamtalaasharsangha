@@ -37,7 +37,7 @@ function blogHeading() {
   
   $(window).on("scroll", () => {
 
-    if ($(window).scrollTop() > 5400) {
+    if ($(window).scrollTop() > 5000) {
       
       $(pujaBlogHeadingBackground).css({
 
@@ -79,7 +79,7 @@ function blogBoxCarousel() {
   
   $(window).on("scroll", () => {
 
-    if ($(window).scrollTop() > 5400) {
+    if ($(window).scrollTop() > 5100) {
       
       blogCarouselBox.forEach((box) => {
 

@@ -31,7 +31,24 @@ app.get('/resubmission', (req, res) => {
 
     res.render('checksubmission.ejs')
 
-})
+});
+
+app.get('/memberdetails', async (req, res) => {
+
+    let result = await db.query("SELECT * FROM members");
+    let getAllMembers = [];
+    getAllMembers = result.rows;
+    res.render("membersdetails.ejs", { members: getAllMembers });
+
+});
+
+app.get('/delete/:id', async (req, res) => {
+    
+    let id = req.params.id;
+    await db.query("DELETE FROM members where id = $1", [id]);
+    res.redirect("/memberdetails");
+
+});
 
 app.post("/thankyou", async (req, res) => {
 

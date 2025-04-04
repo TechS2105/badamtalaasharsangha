@@ -54,7 +54,7 @@ function imageShowcaseAnimation() {
     window.addEventListener('scroll', () => {
 
         // First box
-        if (window.scrollY > 4000) {
+        if (window.scrollY > 3500) {
             
             firstImages[0].style.transform = "scale(1)";
             firstImages[0].style.filter = "blur(0px)";
@@ -92,7 +92,7 @@ function imageShowcaseAnimation() {
         // }
 
         // Second box
-        if(window.scrollY > 4200){
+        if(window.scrollY > 3700){
 
             secondImages[1].style.transform = "scale(1)";
             secondImages[1].style.filter = "blur(0px)";
@@ -109,7 +109,7 @@ function imageShowcaseAnimation() {
         // }
 
         // Third box
-        if (window.scrollY > 4500) {
+        if (window.scrollY > 3900) {
             
             thirdImages[0].style.transform = "scale(1)";
             thirdImages[0].style.filter = "blur(0px)";

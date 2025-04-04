@@ -18,6 +18,14 @@
     src: url(../fonts/Jaini-Regular.ttf);
 }
 
+/** Large screen header */
+.hidden{
+
+    transform: translateY(-1000px);
+
+
+}
+
 header{
 
     display: flex;
@@ -307,4 +315,81 @@ nav ul li > .submenu2 {
 }
 
 
+/** Small screen header */
+.smallscreenheader{
+
+    width: 80%;
+    height: 90px;
+    background-color: #ebebeb;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999999999999;
+    border-radius: 50px;
+    overflow: hidden;
+    /* box-shadow: 2px 5px 10px #fff; */
+
+}
+
+.smallscreenheader > .header{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.header > .logbox{
+
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+
+}
+
+.logbox > a img{
+
+    width: 90px;
+    height: 90px;
+
+}
+
+.header > .navbox{
+
+    width: 80%;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding-left: 20px;
+
+}
+
+.navbox > ul{
+
+    display: inline-flex;
+    gap: 20px;
+    margin-bottom: 0px;
+    list-style-type: none;
+
+}
+
+.navbox ul > li a{
+
+    text-decoration: none;
+    font-family: 'vaidikfont';
+    font-size: 20px;
+    color: var(--secondarycolor);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px 5px;
+
+}
 

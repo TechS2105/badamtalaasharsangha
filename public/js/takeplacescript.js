@@ -69,7 +69,7 @@ function imageScrollAnimation() {
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 2350) {
+        if (window.scrollY > 2100) {
         
             imageSectionHeading.style.transform = "translateY(0px)";
             imageSectionHeading.style.transition = "all 0.7s ease";

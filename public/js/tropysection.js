@@ -27,7 +27,7 @@ function trophyAnimation() {
     
     $(window).on("scroll", () => {
 
-        if ($(window).scrollTop() > 4800) {
+        if ($(window).scrollTop() > 4500) {
             
             $(trophyHeading).css({
 

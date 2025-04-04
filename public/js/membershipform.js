@@ -15,7 +15,7 @@ formInputBox[2].style.transform = `translateY(-500px)`;
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 2000) {
+    if (window.scrollY > 1500) {
         
         membershipBox.style.transform = `scale(1)`;
         membershipBox.style.transition = "all 0.7s ease";

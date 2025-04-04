@@ -23,7 +23,7 @@ function logoHeadingAnimation() {
     
     $(window).on("scroll", () => {
 
-        if ($(window).scrollTop() > 3500) {
+        if ($(window).scrollTop() > 3000) {
             
             $(logoHeading).css({
 
@@ -53,7 +53,7 @@ function logoCarouselAnimation() {
 
     $(window).on("scroll", () => {
 
-        if ($(window).scrollTop() > 3500) {
+        if ($(window).scrollTop() > 3000) {
             
             $(firstLogoCarousel).css({
               transform: "scale(1)",

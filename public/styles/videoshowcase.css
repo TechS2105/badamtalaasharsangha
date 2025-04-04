@@ -171,7 +171,7 @@
 .videoshowcasebox .subvideobox > .videoshowcase{
 
     position: fixed;
-    z-index: 99999999;
+    z-index: 9999999999999999999;
     top: 0;
     left: 0;
     background-image: linear-gradient(to left, #ffff3fc6, #2b9348c1);

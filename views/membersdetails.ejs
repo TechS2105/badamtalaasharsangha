@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/memberlistpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="icon" href="/images/logo.png">
+    <title>Member List</title>
+</head>
+<body>
+
+    <div class="logout">
+
+        <a href="/logout"> Logout </a>
+
+    </div>
+
+    <div class="memberslistsection">
+
+        <div class="memberheadingbox">
+
+            <div class="logobox">
+
+                <img src="/images/logo.png" alt="">
+
+            </div>
+            <div class="headingbox">
+
+                <h1> Badamtala Ashar Sangha </h1>
+                <p> Joined Members List </p>
+
+            </div>
+
+        </div>
+
+        <div class="memberlistbox">
+
+            <div class="memberslistheading">
+
+                <table>
+
+                    <tr>
+
+                        <th>Member Id</th>
+                        <th>Member Name</th>
+                        <th>Member Email</th>
+                        <th>Delete Member</th>
+
+                    </tr>
+
+                    <% members.forEach((member) => { %>
+
+                        <tr>
+                            <td> <%= member.id %> </td>
+                            <td> <%= member.name %> </td>
+                            <td> <%= member.email %></td>
+                            <td><a href="/delete/<%=member.id%>"><i class="ri-delete-bin-6-line"></i> </a></td>
+                        </tr>
+
+                    <% }) %>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
