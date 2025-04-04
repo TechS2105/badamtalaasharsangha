@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/register.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     <link rel="icon" href="/images/logo.png">
     <title>Register</title>
 </head>
 <body>
     
+    <div class="registersection">
+
+        <div class="registerbox">
+
+            <div class="registerimage">
+
+                <img src="/images/logo.png" alt>
+
+            </div>
+            <div class="registerform">
+
+                <form action="/registered" method="post">
+
+                    <label for="FullName"> Full Name: </label><br>
+                    <input type="text" name="name" placeholder="Enter Full Name"><br><br>
+
+                    <label for="Email"> Email: </label><br>
+                    <input type="email" name="email" placeholder="Enter Email Address"><br><br>
+
+                    <label for="Password"> Password: </label><br>
+                    <input type="password" name="password" placeholder="Enter Password"><br><br><br>
+
+                    <div class="registerboxlink">
+
+                        <input type="submit" value="Signup">
+                        
+                        <div class="otherregisterlink">
+
+                            <a href="#"> <i class="ri-google-fill"></i> </a>
+                            <a href="#"> <i class="ri-facebook-fill"></i> </a>
+                            <a href="#"> <i class="ri-instagram-line"></i> </a>
+                            <a href="#"> <i class="ri-twitter-x-line"></i> </a>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
