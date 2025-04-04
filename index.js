@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import pg from 'pg';
 import env from 'dotenv';
+import bcrypt from 'bcrypt';
 
 const port = 3000;
 const app = express();
@@ -47,6 +48,18 @@ app.get('/delete/:id', async (req, res) => {
     let id = req.params.id;
     await db.query("DELETE FROM members where id = $1", [id]);
     res.redirect("/memberdetails");
+
+});
+
+app.get("/login", (req, res) => {
+
+    res.render("login.ejs");
+
+});
+
+app.get("/register", (req, res) => {
+
+    res.render("register.ejs");
 
 });
 
