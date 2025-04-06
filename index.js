@@ -3,10 +3,10 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import env from "dotenv";
 import bcrypt from 'bcrypt';
-import passport from 'passport';
 import session from 'express-session';
+import passport from 'passport';
 import { Strategy } from 'passport-local';
-import GoogleStrategy from "passport-google-oauth2";
+import GoogleStrategy from 'passport-google-oauth2';
 
 const port = 3000;
 const app = express();
@@ -25,16 +25,18 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.use(
-  session({
-    secret: process.env.TOPSECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-    },
-  })
-);
+app.use(session({
+
+  secret: process.env.TOPSECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+
+    maxAge: 1000 * 60 * 60 * 24,
+
+  }
+
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -74,9 +76,9 @@ app.get('/memberdetails', async (req, res) => {
 
   if (req.isAuthenticated()) {
     
-    const result = await db.query("SELECT * FROM members");
+    const checkMembers = await db.query("SELECT * FROM members");
     let getAllMembers = [];
-    getAllMembers = result.rows;
+    getAllMembers = checkMembers.rows;
     res.render("membersdetails.ejs", { members: getAllMembers });
 
   } else {
@@ -87,20 +89,7 @@ app.get('/memberdetails', async (req, res) => {
 
 });
 
-app.get('/auth/google', passport.authenticate("google", {
-
-  scope: ["profile", "email"],
-
-}));
-
-app.get('/auth/google/memberdetails', passport.authenticate("google", {
-
-  successRedirect: "/memberdetails",
-  failureRedirect: "/login",
-
-}));
-
-app.get('/logout', (req, res) => {
+app.get("/logout", (req, res) => {
 
   req.logout((err) => {
 
@@ -116,168 +105,18 @@ app.get('/logout', (req, res) => {
 
 });
 
-app.post("/register", async (req, res) => {
-  
-  let name = req.body.name;
-  let email = req.body.email;
-  let password = req.body.password;
+app.get("/auth/google", passport.authenticate("google", {
 
-  try {
-    
-    const checkUser = await db.query("SELECT * FROM users WHERE email = $1", [email]);
+  scope: ["profile", "email"],
 
-    if (checkUser.rows.length > 0) {
-      
-      res.redirect("/login");
+}));
 
-    } else {
-      
-      bcrypt.genSalt(10, (err, salt) => {
-
-        if (err) {
-          
-          console.log(err);
-
-        }
-
-        bcrypt.hash(password, salt, async (err, hash) => {
-
-          if (err) {
-            
-            console.log(err);
-
-          }
-
-          const newRegisteredUser = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3) RETURNING *", [name, email, hash]);
-          let user = newRegisteredUser.rows[0];
-          req.login(user, (err) => {
-
-            if (err) {
-              
-              console.log(err);
-
-            }
-
-            res.redirect('/memberdetails');
-
-          })
-
-        });
-
-      });
-
-    }
-
-  } catch (err) {
-
-    console.log(err);
-
-  }
-
-});
-
-app.post('/login', passport.authenticate("local", {
+app.get("/auth/google/memberdetails", passport.authenticate("google", {
 
   successRedirect: "/memberdetails",
-  failureRedirect: "/login",
+  failureRedirect: "/login"
 
 }));
-
-passport.use("local", new Strategy(async function verify(username, password, cb) {
-  
-  try {
-    const registeredUser = await db.query("SELECT * FROM users WHERE email = $1", [username]);
-
-    if (registeredUser.rows.length > 0) {
-    
-      let user = registeredUser.rows[0];
-      let userPassword = user.password;
-
-      bcrypt.compare(password, userPassword, (err, result) => {
-
-        if (err) {
-        
-          return cb(err);
-
-        } else {
-        
-          if (result) {
-          
-            return cb(null, user);
-
-          } else {
-          
-            return cb(null, false);
-
-          }
-
-        }
-
-      });
-
-    } else {
-    
-      return cb("User not found");
-
-    }
-    
-  } catch(err) {
-    
-    return cb(err);
-
-  }
-
-}));
-
-passport.use(
-  "google",
-  new GoogleStrategy(
-  
-  {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/memberdetails",
-    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
-  },
-    
-  async (accessToken, refreshToken, profile, cb) => {
-    
-    try { 
-
-      let getNewUser = await db.query("SELECT * FROM users WHERE email = $1", [profile.email]);
-
-      if (getNewUser.rows.length === 0) {
-        
-        let newUser = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3)", [profile.given_name, profile.email, "google"]);
-        return cb(null, newUser);
-
-      } else {
-        
-        return cb(null, getNewUser);
-
-      }
-
-    } catch (err) {
-      
-      return cb(err);
-
-    }
-
-  }
-  
-));
-
-passport.serializeUser((user, cb) => {
-
-  cb(null, user);
-
-});
-
-passport.deserializeUser((user, cb) => {
-
-  cb(null, user);
-
-});
 
 app.post("/thankyou", async (req, res) => {
   try {
@@ -303,6 +142,147 @@ app.post("/thankyou", async (req, res) => {
   } catch (error) {
     console.error("There have something error in this file");
   }
+});
+
+app.post("/register", async (req, res) => {
+  
+  try {
+    
+    let name = req.body.name;
+    let email = req.body.email;
+    let password = req.body.password;
+
+    const checkUser = await db.query("SELECT * FROM users WHERE email = $1", [email]);
+
+    if (checkUser.rows.length > 0) {
+      
+      res.redirect('/login');
+
+    } else {
+      
+      bcrypt.genSalt(10, (err, salt) => {
+
+        if (err) {
+          
+          console.log(err);
+
+        }
+
+        bcrypt.hash(password, salt, async (err, hash) => {
+
+          if (err) {
+            
+            console.log(err);
+
+          }
+
+          await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3)", [name, email, hash]);
+          res.redirect('/memberdetails');
+
+        });
+
+      });
+
+    }
+
+  } catch (err) {
+    
+    console.log(err);
+
+  }
+
+});
+
+app.post("/login", passport.authenticate("local", {
+
+  successRedirect: "/memberdetails",
+  failureRedirect: "/login"
+
+}));
+
+passport.use("local", new Strategy(async function verify(username, password, cb) {
+
+  try {
+
+    const checkedRegisteredUser = await db.query("SELECT * FROM users WHERE email = $1", [username]);
+
+    if (checkedRegisteredUser.rows.length > 0) {
+      
+      let user = checkedRegisteredUser.rows[0];
+      let userPassword = user.password;
+
+      bcrypt.compare(password, userPassword, (err, result) => {
+
+        if (err) {
+          
+          return cb(err);
+
+        } else {
+          
+          if (result) {
+            
+            return cb(null, user);
+
+          } else {
+            
+            return cb(null, false);
+
+          }
+
+        }
+
+      });
+
+    } else {
+      
+      return cb("User not found....");
+
+    }
+
+  } catch (err) {
+    
+    return cb(err);
+
+  }
+
+}));
+
+passport.use(
+  "google",
+  new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.GOOGLE_CALLBACK_URL,
+    userProfileURL: process.env.GOOGLE_USERPROFILE_URL
+  }, async (accessToken, refreshToken, profile, cb) => {
+
+    console.log(profile);
+    const getNewUser = await db.query("SELECT * FROM users WHERE email = $1", [profile.email]);
+
+    if (getNewUser.rows.length === 0) {
+      
+      const newUser = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3)", [profile.given_name, profile.email, "google"]);
+      return cb(null, newUser);
+
+    } else {
+      
+      return cb(null, getNewUser);
+
+    }
+
+  })
+);
+
+passport.serializeUser((user, cb) => {
+
+  cb(null, user);
+
+});
+
+passport.deserializeUser((user, cb) => {
+
+  cb(null, user);
+
 });
 
 app.listen(port, () => {
