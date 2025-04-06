@@ -13,12 +13,20 @@ const app = express();
 env.config();
 
 const db = new pg.Client({
-  user: process.env.POSTGRES_USER,
-  host: process.env.POSTGRES_HOST,
-  database: process.env.POSTGRES_DATABASE,
-  password: process.env.POSTGRES_PASSWORD,
-  port: process.env.POSTGRES_PORT,
+  // user: process.env.POSTGRES_USER,
+  // host: process.env.POSTGRES_HOST,
+  // database: process.env.POSTGRES_DATABASE,
+  // password: process.env.POSTGRES_PASSWORD,
+  // port: process.env.POSTGRES_PORT,
+  CONNECTIONsTRING: process.env.DB_URL,
+  ssl: {
+    
+    rejectUnauthorized: false
+
+  }
+
 });
+
 
 db.connect();
 
@@ -28,7 +36,7 @@ app.use(express.static("public"));
 app.use(session({
 
   secret: process.env.TOPSECRET,
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: {
 
