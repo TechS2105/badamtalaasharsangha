@@ -2,10 +2,11 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import env from "dotenv";
-import bcrypt from "bcrypt";
-import session from "express-session";
-import passport from "passport";
-import { Strategy } from "passport-local";
+import bcrypt from 'bcrypt';
+import passport from 'passport';
+import session from 'express-session';
+import { Strategy } from 'passport-local';
+import GoogleStrategy from "passport-google-oauth2";
 
 const port = 3000;
 const app = express();
@@ -30,10 +31,8 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-
-      maxAge: 1000 * 60 * 60 * 24
-
-    }
+      maxAge: 1000 * 60 * 60 * 24,
+    },
   })
 );
 
@@ -71,118 +70,213 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
-app.get('/logout', (req, res) => {
+app.get('/memberdetails', async (req, res) => {
 
-  req.logout(function (err) {
-    
-    if (err) {
-      
-      console.log(err);
-
-    } else {
-      
-      res.redirect('/login');
-
-    }
-
-  })
-
-})
-
-app.get("/memberdetails", async (req, res) => {
-    
   if (req.isAuthenticated()) {
+    
     const result = await db.query("SELECT * FROM members");
     let getAllMembers = [];
     getAllMembers = result.rows;
     res.render("membersdetails.ejs", { members: getAllMembers });
+
   } else {
-    res.redirect("/login");
+    
+    res.redirect('/login');
+
   }
+
+});
+
+app.get('/auth/google', passport.authenticate("google", {
+
+  scope: ["profile", "email"],
+
+}));
+
+app.get('/auth/google/memberdetails', passport.authenticate("google", {
+
+  successRedirect: "/memberdetails",
+  failureRedirect: "/login",
+
+}));
+
+app.get('/logout', (req, res) => {
+
+  req.logout((err) => {
+
+    if (err) {
+      
+      console.log(err);
+
+    }
+
+    res.redirect('/login');
+
+  });
+
 });
 
 app.post("/register", async (req, res) => {
+  
   let name = req.body.name;
   let email = req.body.email;
   let password = req.body.password;
 
-  const checkUser = await db.query("SELECT * FROM users WHERE email = $1", [
-    email,
-  ]);
+  try {
+    
+    const checkUser = await db.query("SELECT * FROM users WHERE email = $1", [email]);
 
-  if (checkUser.rows.length > 0) {
-    res.redirect("/login");
-  } else {
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err) {
-        console.log(err);
-      }
+    if (checkUser.rows.length > 0) {
+      
+      res.redirect("/login");
 
-      bcrypt.hash(password, salt, async (err, hash) => {
+    } else {
+      
+      bcrypt.genSalt(10, (err, salt) => {
+
         if (err) {
+          
           console.log(err);
+
         }
 
-        const result = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3) RETURNING *", [name, email, hash])
-        let user = result.rows[0];
-        req.login(user, (err) => {
+        bcrypt.hash(password, salt, async (err, hash) => {
 
-          console.log(err);
-          res.redirect("/memberdetails");
+          if (err) {
+            
+            console.log(err);
+
+          }
+
+          const newRegisteredUser = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3) RETURNING *", [name, email, hash]);
+          let user = newRegisteredUser.rows[0];
+          req.login(user, (err) => {
+
+            if (err) {
+              
+              console.log(err);
+
+            }
+
+            res.redirect('/memberdetails');
+
+          })
 
         });
 
       });
-    });
+
+    }
+
+  } catch (err) {
+
+    console.log(err);
+
   }
+
 });
 
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/memberdetails",
-    failureRedirect: "/login"
-  })
-);
+app.post('/login', passport.authenticate("local", {
+
+  successRedirect: "/memberdetails",
+  failureRedirect: "/login",
+
+}));
+
+passport.use("local", new Strategy(async function verify(username, password, cb) {
+  
+  try {
+    const registeredUser = await db.query("SELECT * FROM users WHERE email = $1", [username]);
+
+    if (registeredUser.rows.length > 0) {
+    
+      let user = registeredUser.rows[0];
+      let userPassword = user.password;
+
+      bcrypt.compare(password, userPassword, (err, result) => {
+
+        if (err) {
+        
+          return cb(err);
+
+        } else {
+        
+          if (result) {
+          
+            return cb(null, user);
+
+          } else {
+          
+            return cb(null, false);
+
+          }
+
+        }
+
+      });
+
+    } else {
+    
+      return cb("User not found");
+
+    }
+    
+  } catch(err) {
+    
+    return cb(err);
+
+  }
+
+}));
 
 passport.use(
-  new Strategy(async function verify(email, password, cb) {
-    try {
-      const checkUserMail = await db.query(
-        "SELECT * FROM users WHERE email = $1",
-        [email]
-      );
+  "google",
+  new GoogleStrategy(
+  
+  {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/memberdetails",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+  },
+    
+  async (accessToken, refreshToken, profile, cb) => {
+    
+    try { 
 
-      if (checkUserMail.rows.length > 0) {
-        let user = checkUserMail.rows[0];
-        let userPassword = user.password;
+      let getNewUser = await db.query("SELECT * FROM users WHERE email = $1", [profile.email]);
 
-        bcrypt.compare(password, userPassword, (err, result) => {
-          if (err) {
-            return cb(err);
-          } else {
-            if (result) {
-              return cb(null, user);
-            } else {
-              return cb(null, false);
-            }
-          }
-        });
+      if (getNewUser.rows.length === 0) {
+        
+        let newUser = await db.query("INSERT INTO users(name, email, password) VALUES($1, $2, $3)", [profile.given_name, profile.email, "google"]);
+        return cb(null, newUser);
+
       } else {
-        return cb("User not found");
+        
+        return cb(null, getNewUser);
+
       }
+
     } catch (err) {
+      
       return cb(err);
+
     }
-  })
-);
+
+  }
+  
+));
 
 passport.serializeUser((user, cb) => {
+
   cb(null, user);
+
 });
 
 passport.deserializeUser((user, cb) => {
+
   cb(null, user);
+
 });
 
 app.post("/thankyou", async (req, res) => {
